@@ -70,8 +70,6 @@ ChartBin uses a **custom Design System** built with Styled-Components, following
 
 ## 📸 Screenshots
 
-## 📸 Screenshots
-
 ### Home
 
 | Light Mode | Dark Mode |
