@@ -72,27 +72,29 @@ ChartBin uses a **custom Design System** built with Styled-Components, following
 
 ### Home
 
-| Light Mode | Dark Mode |
+| Home (Light) | Home (Dark) |
 | :---: | :---: |
-| ![Home Light](/screenshots/En-Home.png) | ![Home Dark](/screenshots/DesktopDARK.png) |
+| ![Home Light](https://raw.githubusercontent.com/za1377/chartbeen_front/main/public/screenshots/En-Home.png) | ![Home Dark](https://raw.githubusercontent.com/za1377/chartbeen_front/main/public/screenshots/DesktopDARK.png) |
 
 ### About Us
 
-| Light Mode | Dark Mode |
+| About Us (Light) | About Us (Dark) |
 | :---: | :---: |
-| ![About Light](/screenshots/En-AboutUs.png) | ![About Dark](/screenshots/AboutUsDARK.png) |
+| ![About Light](https://raw.githubusercontent.com/za1377/chartbeen_front/main/public/screenshots/En-AboutUs.png) | ![About Dark](https://raw.githubusercontent.com/za1377/chartbeen_front/main/public/screenshots/AboutUsDARK.png) |
 
 ### Blog
 
-| Light Mode | Dark Mode |
+| Blog (Light) | Blog (Dark) |
 | :---: | :---: |
-| ![Blog Light](/screenshots/En-BlogDetail.png) | ![Blog Dark](/screenshots/BlogDARK.png) |
+| ![Blog Light](https://raw.githubusercontent.com/za1377/chartbeen_front/main/public/screenshots/En-BlogDetail.png) | ![Blog Dark](https://raw.githubusercontent.com/za1377/chartbeen_front/main/public/screenshots/BlogDARK.png) |
 
 ### Blog Detail
 
-| Light Mode | Dark Mode |
+| Blog Detail (Light) | Blog Detail (Dark) |
 | :---: | :---: |
-| ![Blog Detail Light](/screenshots/En-BlogDetail.png) | ![Blog Detail Dark](/screenshots/BlogDetailDARK.png) |
+| ![Blog Detail Light](https://raw.githubusercontent.com/za1377/chartbeen_front/main/public/screenshots/En-BlogDetail.png) | ![Blog Detail Dark](https://raw.githubusercontent.com/za1377/chartbeen_front/main/public/screenshots/BlogDetailDARK.png) |
+
+---
 
 ## 🤝 Contributing
 
