@@ -70,22 +70,31 @@ ChartBin uses a **custom Design System** built with Styled-Components, following
 
 ## 📸 Screenshots
 
-| Home (Light) | Home (Dark) |
-| :---: | :---: |
-| ![Light](/screenshots/En-Home.png) | ![Dark](/screenshots/DesktopDARK.png) | 
+## 📸 Screenshots
 
-| About (Light) | About (Dark) |
-| :---: | :---: |
-| ![Light](/screenshots/En-AboutUs.png) | ![Dark](/screenshots/AboutUsDARK.png) | 
+### Home
 
-| Blog (Light) | Blog (Dark) |
+| Light Mode | Dark Mode |
 | :---: | :---: |
-| ![Light](/screenshots/En-BlogDetail.png) | ![Dark](/screenshots/BlogDARK.png) | 
+| ![Home Light](/screenshots/En-Home.png) | ![Home Dark](/screenshots/DesktopDARK.png) |
 
-| Blog-Detail (Light) | Blog-Detail (Dark) |
+### About Us
+
+| Light Mode | Dark Mode |
 | :---: | :---: |
-| ![Light](/screenshots/En-BlogDetail.png) | ![Dark](/screenshots/BlogDetailDARK.png) | 
----
+| ![About Light](/screenshots/En-AboutUs.png) | ![About Dark](/screenshots/AboutUsDARK.png) |
+
+### Blog
+
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| ![Blog Light](/screenshots/En-BlogDetail.png) | ![Blog Dark](/screenshots/BlogDARK.png) |
+
+### Blog Detail
+
+| Light Mode | Dark Mode |
+| :---: | :---: |
+| ![Blog Detail Light](/screenshots/En-BlogDetail.png) | ![Blog Detail Dark](/screenshots/BlogDetailDARK.png) |
 
 ## 🤝 Contributing
 
