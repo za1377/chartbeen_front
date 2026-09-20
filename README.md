@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ChartBin 📊
 
-## Getting Started
+A simple and fast price tracker for gold, currency, and cryptocurrency.
 
-First, run the development server:
+> ChartBin is designed for users who want to check real-time market prices without any hassle. The data is fetched from reliable sources and updated as quickly as possible.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 📈 Real-time price display (Gold, Coin, Dollar, Euro, Bitcoin, Ethereum)
+- 🌗 Dark/Light theme toggle
+- 🌐 Bilingual support (Persian/English)
+- 📱 Fully responsive design (Desktop, Tablet, Mobile)
+- 🎨 Custom Design System with Styled-Components
+- ⚡ Fast and SEO-friendly (Next.js App Router)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠 Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+### Front-End
+- **Next.js 14+** (App Router)
+- **TypeScript**
+- **Styled-Components** (Design System)
+- **React Query** (Data fetching & caching)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Back-End (in progress)
+- **Spring Boot**
+- **Spring Security + JWT**
+- **JPA / Hibernate**
+- **PostgreSQL**
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎯 Project Goals
 
-## Deploy on Vercel
+This project started as a personal practice to:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Master **React & Next.js** in depth.
+2. Build a **production-ready design system** from scratch.
+3. Implement **real-time data fetching** with React Query.
+4. Learn **Full-Stack development** with Spring Boot.
+5. Create a **portfolio project** for job applications.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🎨 Design System
+
+ChartBin uses a **custom Design System** built with Styled-Components, following the **Atomic Design** methodology:
+
+- **Atoms:** Button, Input, Icon, Badge, ...
+- **Molecules:** SearchBar, Card, PriceTag, ...
+- **Organisms:** Header, Footer, GoldTable, NewsList, ...
+- **Templates:** Page layouts
+- **Pages:** Home, About, Blog, Admin
+
+## 🗺 Roadmap
+
+- [x] Design system foundation (themes, atoms)
+- [x] Migrate to Next.js (App Router)
+- [ ] Bilingual support (i18n)
+- [ ] Real-time prices with React Query
+- [ ] Blog section
+- [ ] Admin panel (CRUD articles)
+- [ ] Spring Boot Back-End
+- [ ] Authentication (JWT)
+- [ ] Deploy to production
+
+---
+
+## 📸 Screenshots
+
+| Home (Light) | Home (Dark) |
+| :---: | :---: |
+| ![Light](/screenshots/En-Home.png) | ![Dark](/screenshots/DesktopDARK.png) | 
+
+| About (Light) | About (Dark) |
+| :---: | :---: |
+| ![Light](/screenshots/En-AboutUs.png) | ![Dark](/screenshots/AboutUsDARK.png) | 
+
+| Blog (Light) | Blog (Dark) |
+| :---: | :---: |
+| ![Light](/screenshots/En-BlogDetail.png) | ![Dark](/screenshots/BlogDARK.png) | 
+
+| Blog-Detail (Light) | Blog-Detail (Dark) |
+| :---: | :---: |
+| ![Light](/screenshots/En-BlogDetail.png) | ![Dark](/screenshots/BlogDetailDARK.png) | 
+---
+
+## 🤝 Contributing
+
+This is a personal project, but suggestions and feedback are always welcome! Feel free to open an issue or reach out.
+
+---
+
+## 📫 Contact
+
+- **LinkedIn:** [Zahra Anvari](https://www.linkedin.com/in/zahra-anvari-b18172249)
+- **Email:** zahraanvari216@gmail.com
+
+---
+
+## 📄 License
+
+This project is for personal and educational use.
