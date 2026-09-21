@@ -5,8 +5,9 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
 export const metadata: Metadata = {
-  title: 'Chartbeen',
+  title: 'Chartbeen | چارت بین',
   description: 'Real-time price tracker for gold, currency, and crypto',
+  keywords: ['Chartbeen', 'طلا', 'دلار', 'بیت‌کوین', 'قیمت لحظه‌ای'],
 };
 
 export default async function RootLayout({
