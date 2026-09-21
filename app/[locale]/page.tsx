@@ -113,7 +113,7 @@ export default function HomePage() {
   }, [language, isFa]);
 
   const t = {
-    subtitle: isFa ? 'سیستم طراحی چارت بین' : 'ChartBin Design System',
+    subtitle: isFa ? 'سیستم طراحی چارت بین' : 'Chartbeen Design System',
     buttons: isFa ? 'دکمه‌ها' : 'Buttons',
     buttonsDesc: isFa
       ? 'چهار واریانت، سه سایز، حالت غیرفعال و تمام عرض'

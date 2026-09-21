@@ -1,8 +1,8 @@
-# ChartBin 📊
+# Chartbeen 📊
 
 A simple and fast price tracker for gold, currency, and cryptocurrency.
 
-> ChartBin is designed for users who want to check real-time market prices without any hassle. The data is fetched from reliable sources and updated as quickly as possible.
+> Chartbeen is designed for users who want to check real-time market prices without any hassle. The data is fetched from reliable sources and updated as quickly as possible.
 
 ---
 
@@ -46,7 +46,7 @@ This project started as a personal practice to:
 
 ## 🎨 Design System
 
-ChartBin uses a **custom Design System** built with Styled-Components, following the **Atomic Design** methodology:
+Chartbeen uses a **custom Design System** built with Styled-Components, following the **Atomic Design** methodology:
 
 - **Atoms:** Button, Input, Icon, Badge, ...
 - **Molecules:** SearchBar, Card, PriceTag, ...
