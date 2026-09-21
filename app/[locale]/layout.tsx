@@ -1,20 +1,33 @@
 import StyledComponentsRegistry from '@/lib/registery';
 import type { Metadata } from 'next';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { notFound } from 'next/navigation';
 
 export const metadata: Metadata = {
-  title: 'ChartBin',
+  title: 'Chartbeen',
   description: 'Real-time price tracker for gold, currency, and crypto',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { locale: string };
 }) {
+  const { locale } = params;
+
+  if (!['fa', 'en'].includes(locale)) notFound();
+
+  const messages = await getMessages();
+
   return (
-    <html lang="fa" dir="rtl">
+    <html lang={locale} dir={locale === 'fa' ? 'rtl' : 'ltr'}>
       <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <NextIntlClientProvider messages={messages}>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
