@@ -1,8 +1,31 @@
 {
   "home": {
-    "title": "چارت بین",
     "subtitle": "سیستم طراحی چارت بین",
     "buttons": "دکمه‌ها",
-    "inputs": "ورودی‌ها"
+    "buttonsDesc": "چهار واریانت، سه سایز، حالت غیرفعال و تمام عرض",
+    "primary": "اصلی",
+    "secondary": "ثانویه",
+    "outline": "خطی",
+    "ghost": "شفاف",
+    "small": "کوچک",
+    "medium": "متوسط",
+    "large": "بزرگ",
+    "disabled": "غیرفعال",
+    "fullWidth": "تمام عرض",
+    "start": "شروع",
+    "inputs": "ورودی‌ها",
+    "inputsDesc": "با آیکون، لیبل، خطا و حالت موفقیت",
+    "username": "نام کاربری",
+    "usernamePlaceholder": "نام کاربری...",
+    "email": "ایمیل",
+    "emailPlaceholder": "ایمیل...",
+    "search": "جستجو",
+    "searchPlaceholder": "جستجو...",
+    "password": "رمز عبور",
+    "errorMessage": "ایمیل معتبر نیست",
+    "successMessage": "ایمیل معتبر است",
+    "themeLight": "روشن",
+    "themeDark": "تاریک",
+    "footer": "طراحی و توسعه توسط زهرا انوری"
   }
 }

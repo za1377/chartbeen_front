@@ -1,8 +1,31 @@
 {
   "home": {
-    "title": "Chartbeen",
     "subtitle": "Chartbeen Design System",
     "buttons": "Buttons",
-    "inputs": "Inputs"
+    "buttonsDesc": "4 variants, 3 sizes, disabled, and full width",
+    "primary": "Primary",
+    "secondary": "Secondary",
+    "outline": "Outline",
+    "ghost": "Ghost",
+    "small": "Small",
+    "medium": "Medium",
+    "large": "Large",
+    "disabled": "Disabled",
+    "fullWidth": "Full Width",
+    "start": "Start",
+    "inputs": "Inputs",
+    "inputsDesc": "With icon, label, error, and success states",
+    "username": "Username",
+    "usernamePlaceholder": "Username...",
+    "email": "Email",
+    "emailPlaceholder": "Email...",
+    "search": "Search",
+    "searchPlaceholder": "Search...",
+    "password": "Password",
+    "errorMessage": "Invalid email",
+    "successMessage": "Email is valid",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "footer": "Designed & Developed by Zahra Anvari"
   }
 }

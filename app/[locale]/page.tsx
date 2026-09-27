@@ -1,8 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import styled from 'styled-components';
+import { useTranslations, useLocale } from 'next-intl';
+import { useRouter, usePathname } from 'next/navigation';
 import { lightTheme, darkTheme } from '@/styles/themes';
 import { GlobalStyles } from '@/styles/global/GlobalStyles';
 import { Button } from '@/components/atoms/Button';
@@ -99,50 +101,29 @@ const Footer = styled.footer`
 
 // ===== کامپوننت اصلی =====
 export default function HomePage() {
+  // ۱. ترجمه‌ها
+  const t = useTranslations('home');
+
+  // ۲. زبان فعلی از URL
+  const locale = useLocale();
+  const isFa = locale === 'fa';
+
+  // ۳. برای تغییر زبان
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // ۴. Stateها
   const [isDark, setIsDark] = useState(true);
-  const [language, setLanguage] = useState<'fa' | 'en'>('fa');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
 
   const theme = isDark ? darkTheme : lightTheme;
-  const isFa = language === 'fa';
 
-  useEffect(() => {
-    document.documentElement.lang = language;
-    document.documentElement.dir = isFa ? 'rtl' : 'ltr';
-  }, [language, isFa]);
-
-  const t = {
-    subtitle: isFa ? 'سیستم طراحی چارت بین' : 'Chartbeen Design System',
-    buttons: isFa ? 'دکمه‌ها' : 'Buttons',
-    buttonsDesc: isFa
-      ? 'چهار واریانت، سه سایز، حالت غیرفعال و تمام عرض'
-      : '4 variants, 3 sizes, disabled, and full width',
-    primary: isFa ? 'اصلی' : 'Primary',
-    secondary: isFa ? 'ثانویه' : 'Secondary',
-    outline: isFa ? 'خطی' : 'Outline',
-    ghost: isFa ? 'شفاف' : 'Ghost',
-    small: isFa ? 'کوچک' : 'Small',
-    medium: isFa ? 'متوسط' : 'Medium',
-    large: isFa ? 'بزرگ' : 'Large',
-    disabled: isFa ? 'غیرفعال' : 'Disabled',
-    fullWidth: isFa ? 'تمام عرض' : 'Full Width',
-    inputs: isFa ? 'ورودی‌ها' : 'Inputs',
-    inputsDesc: isFa
-      ? 'با آیکون، لیبل، خطا و حالت موفقیت'
-      : 'With icon, label, error, and success states',
-    username: isFa ? 'نام کاربری' : 'Username',
-    email: isFa ? 'ایمیل' : 'Email',
-    search: isFa ? 'جستجو' : 'Search',
-    password: isFa ? 'رمز عبور' : 'Password',
-    usernamePlaceholder: isFa ? 'نام کاربری...' : 'Username...',
-    emailPlaceholder: isFa ? 'ایمیل...' : 'Email...',
-    searchPlaceholder: isFa ? 'جستجو...' : 'Search...',
-    errorMessage: isFa ? 'ایمیل معتبر نیست' : 'Invalid email',
-    successMessage: isFa ? 'ایمیل معتبر است' : 'Email is valid',
-    footer: isFa
-      ? 'طراحی و توسعه توسط زهرا انوری'
-      : 'Designed & Developed by Zahra Anvari',
+  // ۵. تابع تغییر زبان (URL رو عوض می‌کنه)
+  const toggleLanguage = () => {
+    const newLocale = isFa ? 'en' : 'fa';
+    const newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
+    router.push(newPath);
   };
 
   return (
@@ -153,15 +134,15 @@ export default function HomePage() {
           <Header>
             <div>
               <Title>
-                Chart<span>Bin</span>
+                Chartbeen
               </Title>
-              <SectionDescription>{t.subtitle}</SectionDescription>
+              <SectionDescription>{t('subtitle')}</SectionDescription>
             </div>
             <Row style={{ marginBottom: 0 }}>
               <Button
                 $variant="outline"
                 $size="sm"
-                onClick={() => setLanguage(isFa ? 'en' : 'fa')}
+                onClick={toggleLanguage}
                 icon="🌐"
               >
                 {isFa ? 'English' : 'فارسی'}
@@ -172,54 +153,73 @@ export default function HomePage() {
                 onClick={() => setIsDark(!isDark)}
                 icon={isDark ? '☀️' : '🌙'}
               >
-                {isDark ? (isFa ? 'روشن' : 'Light') : (isFa ? 'تاریک' : 'Dark')}
+                {isDark ? t('themeLight') : t('themeDark')}
               </Button>
             </Row>
           </Header>
 
           <Section>
-            <SectionTitle>{t.buttons}</SectionTitle>
-            <SectionDescription>{t.buttonsDesc}</SectionDescription>
+            <SectionTitle>{t('buttons')}</SectionTitle>
+            <SectionDescription>{t('buttonsDesc')}</SectionDescription>
 
             <Card>
               <Row>
-                <Button $variant="primary" $size="sm">{t.primary}</Button>
-                <Button $variant="secondary" $size="sm">{t.secondary}</Button>
-                <Button $variant="outline" $size="sm">{t.outline}</Button>
-                <Button $variant="ghost" $size="sm">{t.ghost}</Button>
+                <Button $variant="primary" $size="sm">
+                  {t('primary')}
+                </Button>
+                <Button $variant="secondary" $size="sm">
+                  {t('secondary')}
+                </Button>
+                <Button $variant="outline" $size="sm">
+                  {t('outline')}
+                </Button>
+                <Button $variant="ghost" $size="sm">
+                  {t('ghost')}
+                </Button>
               </Row>
 
               <Row>
-                <Button $variant="primary" $size="sm">{t.small}</Button>
-                <Button $variant="primary" $size="md">{t.medium}</Button>
-                <Button $variant="primary" $size="lg">{t.large}</Button>
+                <Button $variant="primary" $size="sm">
+                  {t('small')}
+                </Button>
+                <Button $variant="primary" $size="md">
+                  {t('medium')}
+                </Button>
+                <Button $variant="primary" $size="lg">
+                  {t('large')}
+                </Button>
               </Row>
 
               <Row>
                 <Button $variant="primary" $size="sm" disabled>
-                  {t.disabled}
+                  {t('disabled')}
                 </Button>
-                <Button $variant="outline" $size="sm" icon="🚀" iconPosition="right">
-                  {isFa ? 'شروع' : 'Start'}
+                <Button
+                  $variant="outline"
+                  $size="sm"
+                  icon="🚀"
+                  iconPosition="right"
+                >
+                  {t('start')}
                 </Button>
                 <Button $variant="primary" $size="sm" $fullWidth>
-                  {t.fullWidth}
+                  {t('fullWidth')}
                 </Button>
               </Row>
             </Card>
           </Section>
 
           <Section>
-            <SectionTitle>{t.inputs}</SectionTitle>
-            <SectionDescription>{t.inputsDesc}</SectionDescription>
+            <SectionTitle>{t('inputs')}</SectionTitle>
+            <SectionDescription>{t('inputsDesc')}</SectionDescription>
 
             <Card>
               <Row style={{ alignItems: 'stretch' }}>
                 <div style={{ flex: 1, minWidth: '200px' }}>
                   <Input
                     $inputSize="sm"
-                    label={t.username}
-                    placeholder={t.usernamePlaceholder}
+                    label={t('username')}
+                    placeholder={t('usernamePlaceholder')}
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     $fullWidth
@@ -228,8 +228,8 @@ export default function HomePage() {
                 <div style={{ flex: 1, minWidth: '200px' }}>
                   <Input
                     $inputSize="sm"
-                    label={t.search}
-                    placeholder={t.searchPlaceholder}
+                    label={t('search')}
+                    placeholder={t('searchPlaceholder')}
                     icon="🔍"
                     $fullWidth
                   />
@@ -237,7 +237,7 @@ export default function HomePage() {
                 <div style={{ flex: 1, minWidth: '200px' }}>
                   <Input
                     $inputSize="sm"
-                    label={t.password}
+                    label={t('password')}
                     type="password"
                     placeholder="••••••"
                     $fullWidth
@@ -249,26 +249,26 @@ export default function HomePage() {
                 <div style={{ flex: 1, minWidth: '200px' }}>
                   <Input
                     $inputSize="sm"
-                    label={t.email}
-                    placeholder={t.emailPlaceholder}
+                    label={t('email')}
+                    placeholder={t('emailPlaceholder')}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    error={email && !email.includes('@') ? t.errorMessage : undefined}
-                    success={email && email.includes('@') ? t.successMessage : undefined}
+                    error={email && !email.includes('@') ? t('errorMessage') : undefined}
+                    success={email && email.includes('@') ? t('successMessage') : undefined}
                     $fullWidth
                   />
                 </div>
                 <div style={{ flex: 1, minWidth: '200px' }}>
-                  <Input $inputSize="sm" placeholder={t.small} />
+                  <Input $inputSize="sm" placeholder={t('small')} />
                 </div>
                 <div style={{ flex: 1, minWidth: '200px' }}>
-                  <Input $inputSize="md" placeholder={t.medium} />
+                  <Input $inputSize="md" placeholder={t('medium')} />
                 </div>
               </Row>
             </Card>
           </Section>
 
-          <Footer>{t.footer}</Footer>
+          <Footer>{t('footer')}</Footer>
         </Container>
       </PageContainer>
     </ThemeProvider>
