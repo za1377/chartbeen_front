@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
-import StyledComponentsRegistry from '@/lib/registery';
+import StyledComponentsRegistry from '@/lib/registry';
 
 export const metadata: Metadata = {
   title: 'Chartbeen | چارت بین',
