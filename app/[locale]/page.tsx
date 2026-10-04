@@ -9,6 +9,7 @@ import { lightTheme, darkTheme } from '@/styles/themes';
 import { GlobalStyles } from '@/styles/global/GlobalStyles';
 import { Button } from '@/components/atoms/Button';
 import { Input } from '@/components/atoms/Input';
+import { Icon } from '@/components/atoms/Icon';
 import { useTheme } from '@/context/ThemeContext';
 
 // ===== استایل‌های صفحه نمایش =====
@@ -102,7 +103,6 @@ const Footer = styled.footer`
 
 // ===== کامپوننت اصلی =====
 export default function HomePage() {
-
   const { theme: themeMode, toggleTheme } = useTheme();
 
   // ۱. ترجمه‌ها
@@ -146,7 +146,7 @@ export default function HomePage() {
                 $variant="outline"
                 $size="sm"
                 onClick={toggleLanguage}
-                icon="🌐"
+                icon={<Icon name="globe" />}
               >
                 {isFa ? 'English' : 'فارسی'}
               </Button>
@@ -154,7 +154,11 @@ export default function HomePage() {
                 $variant="outline"
                 $size="sm"
                 onClick={toggleTheme}
-                icon={themeMode === 'dark' ? '☀️' : '🌙'}
+                icon={
+                  <Icon
+                    name={themeMode === 'dark' ? 'sun' : 'moon'}
+                  />
+                }
               >
                 {themeMode === 'dark' ? t('themeLight') : t('themeDark')}
               </Button>
@@ -200,7 +204,7 @@ export default function HomePage() {
                 <Button
                   $variant="outline"
                   $size="sm"
-                  icon="🚀"
+                  icon={<Icon name="rocket" size="sm" />}
                   iconPosition="right"
                 >
                   {t('start')}
@@ -233,7 +237,7 @@ export default function HomePage() {
                     $inputSize="sm"
                     label={t('search')}
                     placeholder={t('searchPlaceholder')}
-                    icon="🔍"
+                    icon={<Icon name="search" size="sm" />}
                     $fullWidth
                   />
                 </div>
