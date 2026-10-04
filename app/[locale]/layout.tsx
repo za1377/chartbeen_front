@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import StyledComponentsRegistry from '@/lib/registry';
+import { ThemeProvider } from '@/context/ThemeContext';
 
 export const metadata: Metadata = {
   title: 'Chartbeen | چارت بین',
@@ -21,9 +22,11 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={locale === 'fa' ? 'rtl' : 'ltr'}>
       <body>
-        <NextIntlClientProvider messages={messages}>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-        </NextIntlClientProvider>
+        <ThemeProvider>
+          <NextIntlClientProvider messages={messages}>
+            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

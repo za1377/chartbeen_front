@@ -9,6 +9,7 @@ import { lightTheme, darkTheme } from '@/styles/themes';
 import { GlobalStyles } from '@/styles/global/GlobalStyles';
 import { Button } from '@/components/atoms/Button';
 import { Input } from '@/components/atoms/Input';
+import { useTheme } from '@/context/ThemeContext';
 
 // ===== استایل‌های صفحه نمایش =====
 const PageContainer = styled.div`
@@ -57,7 +58,7 @@ const Section = styled.section`
 
 const SectionTitle = styled.h2`
   font-size: 16px;
-  font-weight: ${({ theme }) => theme.typography.fontWeight.semiBold};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.semibold};
   color: ${({ theme }) => theme.colors.text.primary};
   margin-bottom: 2px;
   text-align: start;
@@ -101,6 +102,9 @@ const Footer = styled.footer`
 
 // ===== کامپوننت اصلی =====
 export default function HomePage() {
+
+  const { theme: themeMode, toggleTheme } = useTheme();
+
   // ۱. ترجمه‌ها
   const t = useTranslations('home');
 
@@ -113,11 +117,10 @@ export default function HomePage() {
   const pathname = usePathname();
 
   // ۴. Stateها
-  const [isDark, setIsDark] = useState(true);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
 
-  const theme = isDark ? darkTheme : lightTheme;
+  const theme = themeMode === 'dark' ? darkTheme : lightTheme;
 
   // ۵. تابع تغییر زبان (URL رو عوض می‌کنه)
   const toggleLanguage = () => {
@@ -150,10 +153,10 @@ export default function HomePage() {
               <Button
                 $variant="outline"
                 $size="sm"
-                onClick={() => setIsDark(!isDark)}
-                icon={isDark ? '☀️' : '🌙'}
+                onClick={toggleTheme}
+                icon={themeMode === 'dark' ? '☀️' : '🌙'}
               >
-                {isDark ? t('themeLight') : t('themeDark')}
+                {themeMode === 'dark' ? t('themeLight') : t('themeDark')}
               </Button>
             </Row>
           </Header>
