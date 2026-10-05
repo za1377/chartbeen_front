@@ -11,6 +11,7 @@ import { Button } from '@/components/atoms/Button';
 import { Input } from '@/components/atoms/Input';
 import { Icon } from '@/components/atoms/Icon';
 import { useTheme } from '@/context/ThemeContext';
+import { Badge } from '@/components/atoms/Badge';
 
 // ===== استایل‌های صفحه نمایش =====
 const PageContainer = styled.div`
@@ -271,6 +272,57 @@ export default function HomePage() {
                 <div style={{ flex: 1, minWidth: '200px' }}>
                   <Input $inputSize="md" placeholder={t('medium')} />
                 </div>
+              </Row>
+            </Card>
+          </Section>
+
+          <Section>
+            <SectionTitle>{t('badges') || 'Badges'}</SectionTitle>
+            <SectionDescription>
+              {t('badgesDesc') || 'نمایش وضعیت‌ها با رنگ‌های مختلف'}
+            </SectionDescription>
+
+            <Card>
+              {/* Solid */}
+              <Row>
+                <Badge variant="primary">اصلی</Badge>
+                <Badge variant="success">موفقیت</Badge>
+                <Badge variant="error">خطا</Badge>
+                <Badge variant="warning">هشدار</Badge>
+                <Badge variant="info">اطلاعات</Badge>
+                <Badge variant="neutral">خنثی</Badge>
+              </Row>
+
+              {/* Soft بدون حاشیه */}
+              <Row>
+                <Badge variant="primary" appearance="soft">اصلی</Badge>
+                <Badge variant="success" appearance="soft">موفقیت</Badge>
+                <Badge variant="error" appearance="soft">خطا</Badge>
+                <Badge variant="warning" appearance="soft">هشدار</Badge>
+                <Badge variant="info" appearance="soft">اطلاعات</Badge>
+                <Badge variant="neutral" appearance="soft">خنثی</Badge>
+              </Row>
+
+              {/* Soft با حاشیه */}
+              <Row>
+                <Badge variant="primary" appearance="soft" bordered>اصلی</Badge>
+                <Badge variant="success" appearance="soft" bordered>موفقیت</Badge>
+                <Badge variant="error" appearance="soft" bordered>خطا</Badge>
+                <Badge variant="warning" appearance="soft" bordered>هشدار</Badge>
+                <Badge variant="info" appearance="soft" bordered>اطلاعات</Badge>
+                <Badge variant="neutral" appearance="soft" bordered>خنثی</Badge>
+              </Row>
+
+              {/* Soft + Dot */}
+              <Row>
+                <Badge variant="success" appearance="soft" dot>فعال</Badge>
+                <Badge variant="error" appearance="soft" dot>غیرفعال</Badge>
+              </Row>
+
+              {/* مثل جدول قیمت */}
+              <Row>
+                <Badge variant="success" appearance="soft" bordered size="sm">۱.۰۵٪ +</Badge>
+                <Badge variant="error" appearance="soft" bordered size="sm">۰.۸۵٪ -</Badge>
               </Row>
             </Card>
           </Section>
