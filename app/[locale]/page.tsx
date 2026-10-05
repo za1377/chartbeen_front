@@ -12,6 +12,7 @@ import { Input } from '@/components/atoms/Input';
 import { Icon } from '@/components/atoms/Icon';
 import { useTheme } from '@/context/ThemeContext';
 import { Badge } from '@/components/atoms/Badge';
+import { Card as BaseCard } from '@/components/atoms/Card';
 
 // ===== استایل‌های صفحه نمایش =====
 const PageContainer = styled.div`
@@ -325,6 +326,45 @@ export default function HomePage() {
                 <Badge variant="error" appearance="soft" bordered size="sm">۰.۸۵٪ -</Badge>
               </Row>
             </Card>
+          </Section>
+
+          <Section>
+            <SectionTitle>Cards</SectionTitle>
+            <SectionDescription>نمایش کارت‌ها با حالت‌های مختلف</SectionDescription>
+
+            <Row>
+              <BaseCard>
+                <strong>Default</strong>
+                <span style={{ fontSize: '12px', opacity: 0.7 }}>کارت پیش‌فرض</span>
+              </BaseCard>
+
+              <BaseCard variant="outlined">
+                <strong>Outlined</strong>
+                <span style={{ fontSize: '12px', opacity: 0.7 }}>فقط حاشیه</span>
+              </BaseCard>
+
+              <BaseCard variant="elevated">
+                <strong>Elevated</strong>
+                <span style={{ fontSize: '12px', opacity: 0.7 }}>با سایه</span>
+              </BaseCard>
+
+              <BaseCard variant="ghost">
+                <strong>Ghost</strong>
+                <span style={{ fontSize: '12px', opacity: 0.7 }}>شفاف</span>
+              </BaseCard>
+            </Row>
+
+            <Row>
+              <BaseCard clickable>
+                <strong>Clickable</strong>
+                <span style={{ fontSize: '12px', opacity: 0.7 }}>روی من کلیک کن</span>
+              </BaseCard>
+
+              <BaseCard clickable selected>
+                <strong>Selected</strong>
+                <span style={{ fontSize: '12px', opacity: 0.7 }}>انتخاب‌شده</span>
+              </BaseCard>
+            </Row>
           </Section>
 
           <Footer>{t('footer')}</Footer>
