@@ -26,6 +26,10 @@
     "successMessage": "Email is valid",
     "themeLight": "Light",
     "themeDark": "Dark",
-    "footer": "Designed & Developed by Zahra Anvari"
+    "footer": "Designed & Developed by Zahra Anvari",
+    "badges": "Badges",
+    "badgesDesc": "Display statuses with different colors",
+    "cards": "Cards",
+    "cardsDesc": "Display cards with different states"
   }
 }
