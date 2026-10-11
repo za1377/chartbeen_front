@@ -31,5 +31,16 @@
     "badgesDesc": "Display statuses with different colors",
     "cards": "Cards",
     "cardsDesc": "Display cards with different states"
+  },
+  "header": {
+    "logoTitle": "Chartbeen",
+    "logoSubtitle": "Sort the profits",
+    "home": "Home",
+    "about": "About Us",
+    "blog": "Blog",
+    "settings": "Settings",
+    "light": "Light",
+    "dark": "Dark",
+    "languageToggle": "FA"
   }
 }

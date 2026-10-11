@@ -31,5 +31,16 @@
     "badgesDesc": "نمایش وضعیت‌ها با رنگ‌های مختلف",
     "cards": "کارت‌ها",
     "cardsDesc": "نمایش کارت‌ها با حالت‌های مختلف"
+  },
+  "header": {
+    "logoTitle": "چارت بین",
+    "logoSubtitle": "با چارت بین سود بچین",
+    "home": "صفحه اصلی",
+    "about": "درباره ما",
+    "blog": "وبلاگ",
+    "settings": "تنظیمات",
+    "light": "روشن",
+    "dark": "تاریک",
+    "languageToggle": "EN"
   }
 }
