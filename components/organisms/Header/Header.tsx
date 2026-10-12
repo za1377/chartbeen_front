@@ -20,9 +20,10 @@ export function Header() {
   const locale = useLocale();
 
   const navItems = [
-    { key: 'home', icon: 'home' as const, path: '/' },
     { key: 'about', icon: 'info' as const, path: '/about' },
     { key: 'blog', icon: 'blog' as const, path: '/blog' },
+    { key: 'home', icon: 'home' as const, path: '/' },
+
   ];
 
   return (
@@ -38,6 +39,8 @@ export function Header() {
       </LogoWrapper>
 
       <Nav>
+        <SettingsMenu />
+
         {navItems.map((item) => (
           <Link key={item.key} href={`/${locale}${item.path}`}>
             <NavLink $active={item.path === '/'}>
@@ -49,7 +52,6 @@ export function Header() {
           </Link>
         ))}
 
-        <SettingsMenu />
       </Nav>
     </StyledHeader>
   );
