@@ -2,6 +2,9 @@
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
+  position: sticky;          // ← بچسبه بالا
+  top: 0;                    // ← فاصله از بالا = 0
+  z-index: 50;               // ← بالای بقیه
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,14 +14,11 @@ export const StyledHeader = styled.header`
       ? theme.colors.brand.light
       : theme.colors.brand.light};
   border-bottom: 1px solid ${({ theme }) => theme.colors.border.primary};
-  border-radius: 0 0 20px 20px;
+  border-radius: 0;          // ← گردی رو بردار
   gap: 16px;
   flex-wrap: wrap;
-
-  @media (max-width: 768px) {
-    padding: 10px 14px;
-    gap: 10px;
-  }
+  width: 100%;               // ← تمام عرض
+  box-sizing: border-box;    // ← padding رو حساب کن
 `;
 
 export const LogoWrapper = styled.div`
