@@ -1,21 +1,28 @@
-import { useTheme } from '@/context/ThemeContext';
-import { useLanguageToggle } from '@/hooks/useLanguageToggle';
-import { useLocale, useTranslations } from 'next-intl';
-import { LogoSubtitle, LogoText, LogoTitle, LogoWrapper, Nav, NavIcon, NavLink, StyledHeader } from './Header.styles';
-import { Icon } from '@/components/atoms/Icon';
+'use client';
+
 import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
+import { Icon } from '@/components/atoms/Icon';
+import { SettingsMenu } from '@/components/molecules/SettingsMenu';
+import {
+  StyledHeader,
+  LogoWrapper,
+  LogoText,
+  LogoTitle,
+  LogoSubtitle,
+  Nav,
+  NavLink,
+  NavIcon,
+} from './Header.styles';
 
 export function Header() {
   const t = useTranslations('header');
   const locale = useLocale();
-  const { theme: themeMode, toggleTheme } = useTheme();
-  const toggleLanguage = useLanguageToggle();
 
   const navItems = [
     { key: 'home', icon: 'home' as const, path: '/' },
     { key: 'about', icon: 'info' as const, path: '/about' },
     { key: 'blog', icon: 'blog' as const, path: '/blog' },
-    { key: 'settings', icon: 'settings' as const, path: '/settings' },
   ];
 
   return (
@@ -42,23 +49,7 @@ export function Header() {
           </Link>
         ))}
 
-        <NavLink onClick={toggleLanguage}>
-          <NavIcon>
-            <Icon name="globe" size="md" color="inherit" />
-          </NavIcon>
-          {t('languageToggle')}
-        </NavLink>
-
-        <NavLink onClick={toggleTheme}>
-          <NavIcon>
-            <Icon
-              name={themeMode === 'dark' ? 'sun' : 'moon'}
-              size="md"
-              color="inherit"
-            />
-          </NavIcon>
-          {themeMode === 'dark' ? t('light') : t('dark')}
-        </NavLink>
+        <SettingsMenu />
       </Nav>
     </StyledHeader>
   );
