@@ -70,6 +70,11 @@ export const MenuItem = styled.button`
   text-align: start;
   transition: background 0.15s ease-in-out;
 
+  /* ✅ RTL/LTR خودکار */
+  &:dir(rtl) {
+    flex-direction: row-reverse;
+  }
+
   &:hover {
     background: ${({ theme }) => theme.colors.background.secondary};
   }
