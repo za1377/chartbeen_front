@@ -1,32 +1,35 @@
 import {
-  LuHouse,           
-  LuInfo,            
-  LuBookOpen,        
-  LuSettings,        
+  LuHouse,
+  LuInfo,
+  LuBookOpen,
+  LuSettings,
   
-  LuSun,             
-  LuMoon,            
-  LuGlobe,           
+  LuSun,
+  LuMoon,
+  LuGlobe,
   
-  LuMail,           
-  LuPhone,           
+  LuMail,
+  LuPhone,
   
-  LuLinkedin,        
-  LuSend,            
+  LuLinkedin,
+  LuSend,
   
-  LuTrendingUp,      
-  LuTrendingDown,    
+  LuTrendingUp,
+  LuTrendingDown,
   LuChartCandlestick,
-  LuChartLine,       
+  LuChartLine,
   
-  LuSearch,          
-  LuRocket,          
-  LuTrash2,          
-  LuPencil,          
-  LuPlus,            
-  LuCircleCheck,     
-  LuCircleAlert,     
-  LuLoaderCircle,    
+  LuSearch,
+  LuRocket,
+  LuTrash2,
+  LuPencil,
+  LuPlus,
+  LuCircleCheck,
+  LuCircleAlert,
+  LuLoaderCircle,
+  
+  LuMenu,
+  LuChevronRight,
 } from 'react-icons/lu';
 
 export const iconMap = {
@@ -58,6 +61,9 @@ export const iconMap = {
   check: LuCircleCheck,
   alert: LuCircleAlert,
   loader: LuLoaderCircle,
+  
+  menu: LuMenu,
+  chevronRight: LuChevronRight,
 } as const;
 
 export type IconName = keyof typeof iconMap;

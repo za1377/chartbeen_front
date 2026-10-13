@@ -4,14 +4,26 @@ export const NavMenuWrapper = styled.nav`
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-direction: row-reverse;
+
+  /* موبایل: عمودی توی Drawer */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    gap: 4px;
+
+    &:dir(rtl) {
+      align-items: end;
+    }
+  }
 `;
 
 export const NavMenuItem = styled.button<{ $active?: boolean }>`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 2px;
-  padding: 6px 10px;
+  gap: 10px;
+  padding: 10px 12px;
   background: transparent;
   border: none;
   border-radius: 8px;
@@ -23,15 +35,52 @@ export const NavMenuItem = styled.button<{ $active?: boolean }>`
   font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
   transition: all 0.2s ease-in-out;
   text-decoration: none;
+  width: 100%;
+  text-align: start;
 
   &:hover {
     color: ${({ theme }) => theme.colors.brand.primary};
     background: rgba(40, 132, 178, 0.1);
   }
+
+  /* موبایل: افقی */
+  @media (max-width: 768px) {
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 0.9rem;
+
+    color: ${({ $active, theme }) =>
+      $active
+        ? theme.colors.brand.secondary
+        : theme.mode === 'dark'
+          ? theme.colors.text.tertiary
+          : theme.colors.brand.primary};
+
+    &:dir(rtl) {
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+  }
+
+  /* دسکتاپ: عمودی (آیکون بالا، متن پایین) */
+  @media (min-width: 769px) {
+    flex-direction: column;
+    gap: 2px;
+    width: auto;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
 `;
 
 export const NavMenuIcon = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
 `;
 
 export const SubMenuWrapper = styled.div`
@@ -56,6 +105,20 @@ export const SubMenuContent = styled.div<{ $open: boolean }>`
   transform: ${({ $open }) =>
     $open ? 'translateY(0)' : 'translateY(-8px)'};
   transition: all 0.2s ease-in-out;
+
+  /* موبایل: static (نه absolute) */
+  @media (max-width: 768px) {
+    position: static;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin-top: 4px;
+    min-width: 100%;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    display: ${({ $open }) => ($open ? 'block' : 'none')};
+  }
 `;
 
 export const SubMenuItem = styled.button`
