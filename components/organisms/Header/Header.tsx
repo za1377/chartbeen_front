@@ -2,29 +2,48 @@
 
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
-import { Icon } from '@/components/atoms/Icon';
-import { SettingsMenu } from '@/components/molecules/SettingsMenu';
+import { NavMenu } from '@/components/molecules/NavMenu';
+import { useTheme } from '@/context/ThemeContext';
+import { useLanguageToggle } from '@/hooks/useLanguageToggle';
 import {
   StyledHeader,
   LogoWrapper,
   LogoText,
   LogoTitle,
   LogoSubtitle,
-  Nav,
-  NavLink,
-  NavIcon,
 } from './Header.styles';
 
 export function Header() {
   const t = useTranslations('header');
   const locale = useLocale();
+  const { theme: themeMode, toggleTheme } = useTheme();
+  const toggleLanguage = useLanguageToggle();
 
   const navItems = [
-    { key: 'about', icon: 'info' as const, path: '/about' },
-    { key: 'blog', icon: 'blog' as const, path: '/blog' },
-    { key: 'home', icon: 'home' as const, path: '/' },
-
+    {
+      key: 'settings',
+      icon: 'settings',
+      // ✅ زیرمنو به‌صورت تابع (داینامیک با themeMode)
+      subMenu: (mode: string) => [
+        {
+          key: mode === 'dark' ? 'light' : 'dark',
+          icon: mode === 'dark' ? 'sun' : 'moon',
+        },
+        {
+          key: 'languageToggle',
+          icon: 'globe',
+        },
+      ],
+    },
+    { key: 'about', icon: 'info', path: '/about' },
+    { key: 'blog', icon: 'blog', path: '/blog' },
+    { key: 'home', icon: 'home', path: '/' },
   ];
+
+  const handleSubMenuClick = (key: string) => {
+    if (key === 'light' || key === 'dark') toggleTheme();
+    if (key === 'languageToggle') toggleLanguage();
+  };
 
   return (
     <StyledHeader>
@@ -38,21 +57,11 @@ export function Header() {
         </LogoText>
       </LogoWrapper>
 
-      <Nav>
-        <SettingsMenu />
-
-        {navItems.map((item) => (
-          <Link key={item.key} href={`/${locale}${item.path}`}>
-            <NavLink $active={item.path === '/'}>
-              <NavIcon>
-                <Icon name={item.icon} size="md" color="inherit" />
-              </NavIcon>
-              {t(item.key)}
-            </NavLink>
-          </Link>
-        ))}
-
-      </Nav>
+      <NavMenu
+        items={navItems}
+        themeMode={themeMode}
+        onSubMenuClick={handleSubMenuClick}
+      />
     </StyledHeader>
   );
 }
