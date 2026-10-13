@@ -2,23 +2,23 @@
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
-  position: sticky;          // ← بچسبه بالا
-  top: 0;                    // ← فاصله از بالا = 0
-  z-index: 50;               // ← بالای بقیه
+  position: sticky;          
+  top: 0;                    
+  z-index: 50;               
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 20px;
+  padding: 12px 2.5rem;
   background: ${({ theme }) =>
     theme.mode === 'dark'
       ? theme.colors.brand.light
       : theme.colors.brand.light};
   border-bottom: 1px solid ${({ theme }) => theme.colors.border.primary};
-  border-radius: 0;          // ← گردی رو بردار
+  border-radius: 130px 0px 130px 0px;          // ← گردی رو بردار
   gap: 16px;
   flex-wrap: wrap;
-  width: 100%;               // ← تمام عرض
-  box-sizing: border-box;    // ← padding رو حساب کن
+  width: 100%;               
+  box-sizing: border-box;   
 `;
 
 export const LogoWrapper = styled.div`
@@ -50,27 +50,20 @@ export const LogoWrapper = styled.div`
 export const LogoText = styled.div`
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  line-height: 1.4;
+  align-items: center;
 `;
 
 export const LogoTitle = styled.span`
-  font-size: 18px;
+  font-size: 1.2rem;
   font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
   color: ${({ theme }) => theme.colors.brand.primary};
-
-  @media (max-width: 768px) {
-    font-size: 15px;
-  }
 `;
 
 export const LogoSubtitle = styled.span`
-  font-size: 10px;
+  font-size: 0.8rem;
   color: ${({ theme }) => theme.colors.brand.secondary};
-  font-weight: ${({ theme }) => theme.typography.fontWeight.normal};
-
-  @media (max-width: 768px) {
-    font-size: 9px;
-  }
+  font-weight: ${({ theme }) => theme.typography.fontWeight.semibold};
 `;
 
 export const Nav = styled.nav`

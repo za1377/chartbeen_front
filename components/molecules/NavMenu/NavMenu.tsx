@@ -59,7 +59,7 @@ export function NavMenu({
                 }
               >
                 <NavMenuIcon>
-                  <Icon name={item.icon as any} size="md" color="inherit" />
+                  <Icon name={item.icon as any} size="lg" color="inherit" />
                 </NavMenuIcon>
                 {t(item.key)}
               </NavMenuItem>
@@ -74,7 +74,7 @@ export function NavMenu({
                         setOpenSubMenu(null);
                       }}
                     >
-                      <Icon name={sub.icon as any} size="sm" color="inherit" />
+                      <Icon name={sub.icon as any} size="lg" color="inherit" />
                       {t(sub.key)}
                     </SubMenuItem>
                   </div>
@@ -88,7 +88,7 @@ export function NavMenu({
           <Link key={item.key} href={`/${locale}${item.path || '/'}`}>
             <NavMenuItem $active={item.path === '/'}>
               <NavMenuIcon>
-                <Icon name={item.icon as any} size="md" color="inherit" />
+                <Icon name={item.icon as any} size="lg" color="inherit" />
               </NavMenuIcon>
               {t(item.key)}
             </NavMenuItem>

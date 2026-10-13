@@ -17,9 +17,9 @@ export const NavMenuItem = styled.button<{ $active?: boolean }>`
   border-radius: 8px;
   cursor: pointer;
   color: ${({ $active, theme }) =>
-    $active ? theme.colors.brand.primary : theme.colors.text.secondary};
+    $active ? theme.colors.brand.secondary : theme.colors.brand.primary};
   font-family: inherit;
-  font-size: 11px;
+  font-size: 0.8rem;
   font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
   transition: all 0.2s ease-in-out;
   text-decoration: none;
@@ -31,7 +31,7 @@ export const NavMenuItem = styled.button<{ $active?: boolean }>`
 `;
 
 export const NavMenuIcon = styled.span`
-  font-size: 18px;
+  font-size: 1rem;
 `;
 
 export const SubMenuWrapper = styled.div`

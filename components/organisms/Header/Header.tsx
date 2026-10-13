@@ -49,7 +49,7 @@ export function Header() {
     <StyledHeader>
       <LogoWrapper>
         <Link href={`/${locale}/`}>
-          <img src="/image/svg/logo.svg" alt="Chartbeen" width={40} height={40} />
+          <img src="/image/svg/logo.svg" alt="Chartbeen" width={70} height={60} />
         </Link>
         <LogoText>
           <LogoTitle>{t('logoTitle')}</LogoTitle>
