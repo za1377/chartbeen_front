@@ -6,6 +6,7 @@ import { GlobalStyles } from '@/styles/global/GlobalStyles';
 import { Header } from '@/components/organisms/Header';
 import { useTheme } from '@/context/ThemeContext';
 import { Footer } from '@/components/organisms/Footer';
+import { PriceCategories } from '@/components/organisms/PriceCategories';
 import styled from 'styled-components';
 
 export default function HomePage() {
@@ -38,6 +39,7 @@ const Container = styled.div`
         <Header />
         <PageContent>
           <Container>
+            <PriceCategories />
             {/* Sections */}
           </Container>
         </PageContent>

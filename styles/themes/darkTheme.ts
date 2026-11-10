@@ -34,6 +34,7 @@ export const darkTheme = {
     border: {
       primary: primitiveColors.neutral.dark,       // #505661
       secondary: primitiveColors.neutral.gray,     // #7B8189
+      lightBlue: primitiveColors.brand.textDark,   // #90CAD7
     },
 
     status: {

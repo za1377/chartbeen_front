@@ -34,6 +34,7 @@ export const lightTheme = {
     border: {
       primary: primitiveColors.neutral.lighter,   
       secondary: primitiveColors.neutral.lightest, 
+      lightBlue: primitiveColors.brand.textDark,
     },
 
     status: {

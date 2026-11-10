@@ -43,6 +43,15 @@
     "dark": "تاریک",
     "languageToggle": "EN"
   },
+  "hero": {
+    "gold": "طلا",
+    "coin": "سکه",
+    "dollar": "دلار",
+    "euro": "یورو",
+    "bitcoin": "بیت‌کوین",
+    "ethereum": "اتریوم",
+    "description": "قیمت‌های لحظه‌ای طلا و ارز را در یک نگاه ببینید و تحلیل کنید."
+  },
   "footer": {
     "contactTitle": "راه‌های ارتباط با ما"
   }

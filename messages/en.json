@@ -43,6 +43,15 @@
     "dark": "Dark",
     "languageToggle": "FA"
   },
+  "hero": {
+    "gold": "Gold",
+    "coin": "Coin",
+    "dollar": "Dollar",
+    "euro": "Euro",
+    "bitcoin": "Bitcoin",
+    "ethereum": "Ethereum",
+    "description": "Track live gold and currency prices and analyze trends instantly."
+  },
   "footer": {
     "contactTitle": "Ways to Reach Us"
   }
