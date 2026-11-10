@@ -42,5 +42,8 @@
     "light": "روشن",
     "dark": "تاریک",
     "languageToggle": "EN"
+  },
+  "footer": {
+    "contactTitle": "راه‌های ارتباط با ما"
   }
 }

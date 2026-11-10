@@ -42,5 +42,8 @@
     "light": "Light",
     "dark": "Dark",
     "languageToggle": "FA"
+  },
+  "footer": {
+    "contactTitle": "Ways to Reach Us"
   }
 }
