@@ -50,7 +50,7 @@ export const BrandSection = styled.div`
 export const BrandName = styled.span`
   font-size: 1.8rem;
   font-weight: ${({ theme }) => theme.typography.fontWeight.bold};
-  color: ${({ theme }) => theme.colors.text.primary};
+  color: ${({ theme }) => theme.colors.brand.primary};
 
   @media (max-width: 768px) {
     display: none;
