@@ -169,6 +169,14 @@ export const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  :lang(en) {
+  font-family: ${({ theme }) => theme.typography.fontFamily.english};
+}
+
+:lang(fa) {
+  font-family: ${({ theme }) => theme.typography.fontFamily.persian};
+}
+
   a {
     text-decoration: none;
     color: inherit;

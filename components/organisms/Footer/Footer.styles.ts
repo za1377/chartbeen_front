@@ -113,14 +113,15 @@ export const ContactItem = styled.a`
   text-decoration: none;
   font-size: 0.95rem;
   transition: opacity 0.2s ease-in-out;
+  direction: rtl;
 
   &:hover {
     opacity: 0.8;
   }
 
-  &:dir(rtl) {
+  /* &:dir(rtl) {
     flex-direction: row-reverse;
-  }
+  } */
 `;
 
 export const ContactIcon = styled.span`
