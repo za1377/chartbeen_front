@@ -32,7 +32,7 @@ export const Description = styled.h2`
   text-align: center;
   margin: 20px 0;
   line-height: 1.6;
-  direction: rtl;
+  unicode-bidi: plaintext;
 
   @media (max-width: 768px) {
     font-size: 1.3rem;
