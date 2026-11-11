@@ -3,7 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import StyledComponentsRegistry from '@/lib/registry';
 import { ThemeProvider } from 'next-themes';
-import { ThemeProvider as AppThemeProvider } from '@/context/ThemeContext';
+import { AppThemeProvider } from '@/components/providers/ThemeProvider';
 
 export const metadata: Metadata = {
   title: 'Chartbeen | چارت بین',

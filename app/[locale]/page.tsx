@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from '@/styles/themes';
 import { GlobalStyles } from '@/styles/global/GlobalStyles';
 import { Header } from '@/components/organisms/Header';
-import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from 'next-themes';
 import { Footer } from '@/components/organisms/Footer';
 import { PriceCategories } from '@/components/organisms/PriceCategories';
 import styled from 'styled-components';
