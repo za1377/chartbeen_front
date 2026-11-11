@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 import { NavMenu } from '@/components/molecules/NavMenu';
 import { Icon } from '@/components/atoms/Icon';
-import { useTheme } from '@/context/ThemeContext';
+// import { useTheme } from '@/context/ThemeContext';
+import { useTheme } from 'next-themes';
 import { useLanguageToggle } from '@/hooks/useLanguageToggle';
 import {
   StyledHeader,
@@ -25,7 +26,8 @@ import {
 export function Header() {
   const t = useTranslations('header');
   const locale = useLocale();
-  const { theme: themeMode, toggleTheme } = useTheme();
+  const { theme: themeMode, setTheme } = useTheme();
+const toggleTheme = () => setTheme(themeMode === 'dark' ? 'light' : 'dark');
   const toggleLanguage = useLanguageToggle();
   const [drawerOpen, setDrawerOpen] = useState(false);
 

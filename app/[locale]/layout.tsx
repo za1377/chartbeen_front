@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import StyledComponentsRegistry from '@/lib/registry';
-import { ThemeProvider } from '@/context/ThemeContext';
+import { ThemeProvider } from 'next-themes';
+import { ThemeProvider as AppThemeProvider } from '@/context/ThemeContext';
 
 export const metadata: Metadata = {
   title: 'Chartbeen | چارت بین',
@@ -21,12 +22,21 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={locale === 'fa' ? 'rtl' : 'ltr'} suppressHydrationWarning>
-      <body>
-        <ThemeProvider>
-          <NextIntlClientProvider messages={messages}>
-            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-          </NextIntlClientProvider>
-        </ThemeProvider>
+      <body style={{ margin: 0 }} suppressHydrationWarning>
+        <StyledComponentsRegistry>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem={false}
+            scriptProps={{ type: 'application/json' }}
+          >
+            <NextIntlClientProvider messages={messages}>
+              <AppThemeProvider>
+                {children}
+              </AppThemeProvider>
+            </NextIntlClientProvider>
+          </ThemeProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

@@ -15,6 +15,6 @@ export interface NavItem {
 
 export interface NavMenuProps {
   items: NavItem[];
-  themeMode?: 'light' | 'dark';  // ← پاس دادن themeMode
+  themeMode?: 'light' | 'dark' | undefined | string;  // ← پاس دادن themeMode
   onSubMenuClick?: (key: string) => void;
 }
